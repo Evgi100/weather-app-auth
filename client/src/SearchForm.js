@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -15,16 +16,16 @@ class SearchForm extends React.Component {
 
     handleSubmit(event){
         event.preventDefault();
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET',`http://api.apixu.com/v1/current.json?key=5f1979d6812b411491d164417171806&q=${this.state.city}`);
-        xhr.addEventListener('load',()=>{
-            this.props.onSubmitSearchForm(JSON.parse(xhr.responseText));
+        var url = `http://api.apixu.com/v1/current.json?key=5f1979d6812b411491d164417171806&q=${this.state.city}`
+
+        axios.get(url)
+        .then(response => {
+            this.props.onSubmitSearchForm(response.data);
             this.setState({city: ''});
         })
-        xhr.addEventListener('error',()=>{
-            console.log('error');
-        })
-        xhr.send();
+        .catch(error => {
+            console.log('Error fetching and parsing data', error);
+        });
     }
 
     render() {

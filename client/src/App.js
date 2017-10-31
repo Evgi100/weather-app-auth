@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Header from './WeatherApp/common/Header';
-import Routesss from './Routes';
+import Routes from './Routes';
 import {BrowserRouter} from 'react-router-dom';
 
 
-class App extends React.Component {
+class AppWrapper extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <div>
           <Header/>
           <div className="container">
-            <Routesss/>
+            <Routes/>
           </div>
         </div>
       </BrowserRouter>
@@ -22,4 +22,4 @@ class App extends React.Component {
 }
 
 ReactDom.render(
-  <App/>, document.getElementById('react-app'));
+  <AppWrapper/>, document.getElementById('react-app'));

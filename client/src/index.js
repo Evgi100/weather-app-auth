@@ -3,7 +3,7 @@ import WeatherListBox from './WeatherListBox';
 import SearchForm from './SearchForm';
 
 
-class WeatherApp extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     //bind this to functions
@@ -68,4 +68,4 @@ class WeatherApp extends React.Component {
   }
 }
 
-export default WeatherApp;
+export default App;

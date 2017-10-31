@@ -4,7 +4,7 @@ import About from './weatherApp/common/About';
 import Page404 from './weatherApp/common/404';
 import {Switch, Route} from 'react-router-dom';
 
-const Routesss = () => (
+const Routes = () => (
     <div className="container">
          <Switch>
             <Route name="home" exact path='/' component={WeatherApp} />
@@ -14,4 +14,4 @@ const Routesss = () => (
     </div>
 )
 
-export default Routesss;
+export default Routes;
