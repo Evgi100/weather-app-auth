@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Header from './WeatherApp/common/Header';
+import Header from './common/Header';
 import Routes from './Routes';
 import {BrowserRouter} from 'react-router-dom';
 
