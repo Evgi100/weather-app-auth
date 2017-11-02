@@ -24,17 +24,17 @@ class App extends React.Component {
     }
   }
 
-  onSubmitSearchForm(string) {
-    if(this.search(string.location.name, this.state.cards)){
+  onSubmitSearchForm(data) {
+    if(this.search(data.location.name, this.state.cards)){
       alert('Allready found!');
       return;
     }
 
     var stracture = {
-      name: string.location.name,
-      icon: string.current.condition.icon,
-      feelslike_c: string.current.feelslike_c,
-      text: string.current.condition.text,
+      name: data.location.name,
+      icon: data.current.condition.icon,
+      feelslike_c: data.current.feelslike_c,
+      text: data.current.condition.text,
       comments: []
     };
 
@@ -45,10 +45,10 @@ class App extends React.Component {
     }));
   };
 
-  removeWeatherBox(string) {
+  removeWeatherBox(data) {
     const newState = this.state.cards;
-    if (newState.indexOf(string) > -1) {
-      newState.splice(newState.indexOf(string), 1);
+    if (newState.indexOf(data) > -1) {
+      newState.splice(newState.indexOf(data), 1);
       this.setState({cards: newState})
     }
   };

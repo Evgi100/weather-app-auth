@@ -3,7 +3,7 @@ import WeatherBox from './WeatherBox';
 
 const WeatherListBox = (props) => {
   const boxes = props
-    .cards
+    .boxes
     .map((item, index) => <WeatherBox
       key={index}
       removeWeatherBox={props.removeWeatherBox}
