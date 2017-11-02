@@ -12,7 +12,7 @@ class App extends React.Component {
     
     //Declare local state
     this.state = {
-      cards: []
+      boxes: []
     }
 
   }
@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   onSubmitSearchForm(data) {
-    if(this.search(data.location.name, this.state.cards)){
+    if(this.search(data.location.name, this.state.boxes)){
       alert('Allready found!');
       return;
     }
@@ -39,17 +39,17 @@ class App extends React.Component {
     };
 
     this.setState(prevState => ({
-      cards: prevState
-        .cards
+      boxes: prevState
+        .boxes
         .concat(stracture)
     }));
   };
 
   removeWeatherBox(data) {
-    const newState = this.state.cards;
+    const newState = this.state.boxes;
     if (newState.indexOf(data) > -1) {
       newState.splice(newState.indexOf(data), 1);
-      this.setState({cards: newState})
+      this.setState({boxes: newState})
     }
   };
 
@@ -61,7 +61,7 @@ class App extends React.Component {
           <SearchForm onSubmitSearchForm={this.onSubmitSearchForm}/>
         </div>
         <WeatherListBox
-          cards={this.state.cards}
+          boxes={this.state.boxes}
           removeWeatherBox={this.removeWeatherBox}/>
       </div>
     );
